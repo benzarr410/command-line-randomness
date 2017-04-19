@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo -n "What would you like to ask the magic 8 ball? > "
+read question
+if [[ -z "$question" ]]
+then
+printf '\n' * '\n'
+echo "You need to ask the 8 Ball a question, silly!"
+printf '\n' * '\n'
+./8Ball ^C
+else
+printf '\n' * '\n'
+Responses=(Yes. No. Most\ likely. Probably\ not. Ask\ again\ later. I\ can\'t\ say\ now. )
+printf "Magic 8 Ball, $question\n${Responses[$(shuf -i 0-5 -n 1)]}"
+printf '\n' * '\n'
+printf '\n' * '\n'
+fi
