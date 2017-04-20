@@ -1,0 +1,56 @@
+#!/bin/bash
+yourhp=$(shuf -i 100-110 -n 1)
+theirhp=$(shuf -i 100-110 -n 1)
+function battle {
+WEAPONS=(a\ steel\ chair! a\ baseball\ bat! a\ sword! a\ potato.\ Seriously. A\ pie! the\ power\ of\ memes.)
+dmg=$(shuf -i 1-30 -n 1)
+dmg2=$(shuf -i 1-30 -n 1)
+echo "$USER hits $name with ${WEAPONS[$(shuf -i 0-5 -n 1)]} It did $dmg damage."
+echo "$name hits $USER with ${WEAPONS[$(shuf -i 0-5 -n 1)]} It did $dmg2 damage."
+theirhp=$(($theirhp - $dmg))
+yourhp=$(($yourhp - $dmg2))
+printf '\n' * '\n'
+if (($yourhp < 0)); then
+yourhp=0
+fi
+if (($theirhp < 0)); then
+theirhp=0
+fi
+echo $USER: $yourhp HP
+echo $name: $theirhp HP
+printf '\n' * '\n'
+}
+function Export {
+echo "It's $USER vs $name in this week's Death Battle!"
+printf '\n' * '\n'
+while (($yourhp > 0)) && (($theirhp > 0)); do
+battle
+sleep 2
+done
+if (($yourhp != 0)); then
+echo $USER wins!
+fi
+if (($theirhp != 0)); then
+echo $name wins!
+fi
+printf '\n' * '\n'
+}
+function AskE {
+echo "Would you like to export this battle log to a file? Y/N"
+read answer
+if [ $answer = "Y" ]
+then Export > BattleLog.txt
+fi
+if [ $answer = "N" ]
+then Export
+fi
+if [ $answer != "N" ] && [ $answer != "Y" ]
+then echo "Sorry, I didn't understand that answer."
+fi
+}
+printf '\n' * '\n'
+echo "Welcome to cli-deathbattle! I'm your host, Benzarr. Let's see who will be pitted against one another in a battle...to the death!"
+printf '\n' * '\n'
+echo "Enter opponent name: > "
+read name
+AskE
