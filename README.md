@@ -13,3 +13,4 @@ Mark the files as executable, either by right clicking, then going to Properties
 Then, double click on the file, or run `./<filename>` And boom, it should run. If not, open an [issue](https://github.com/benzarr410/command-line-fun/issues).
 ## Program Explanations
 8 Ball: Come on, it's a [Magic 8 Ball](https://en.wikipedia.org/w/index.php?title=Magic_8-Ball).
+Deathbattle: Fight someone (or something) to the death for glory! Or shame...
