@@ -1,4 +1,4 @@
-Hi! I'm benzarr, and I write simple/fun bash scripts for your Linux commmand line!
+Hi! I'm benzarr, and I write simple, fun bash scripts for your Linux commmand line!
 
 ## How do I install this thing?
 Now, to install this repo, it's quite simple.
