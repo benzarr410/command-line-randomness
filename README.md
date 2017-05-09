@@ -15,3 +15,5 @@ Then, double click on the file, or run `./<filename>` And boom, it should run. I
 8 Ball: Come on, it's a [Magic 8 Ball](https://en.wikipedia.org/w/index.php?title=Magic_8-Ball).
 
 Deathbattle: Fight someone (or something) to the death for glory! Or shame...
+
+Discord Chat Generator: [Discord](http://discordapp.com) is a multiplatform chat service for gamers, and it has some silly antics that go on in its official servers. This script emulates that.
