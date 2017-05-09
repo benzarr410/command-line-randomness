@@ -1,0 +1,17 @@
+#!/bin/bash
+
+name=(BaconRanger ChromeNinja darkmastermindz Foxtrek_64 HGMPlays Intellihack Lieutenant\ Nakuu Matt\ \|\ WizardCM)
+body=(Screenshare\ when discord.gg/jHkHG @AndyG\#5071\ help\ I\ am\ having\ an\ issue Please\ stay\ on\ topic. If\ anyone\ wants\ to\ join\ my\ development\ team,\ DM\ me aaaaaaaaaaaaaaaa)
+function generate () {
+echo ${name[$(shuf -i 0-7 -n 1)]} at $(date "+%I:%M %p")
+echo ${body[$(shuf -i 0-5 -n 1)]}
+printf '\n' * '\n'
+}
+printf "How many lines would you like to generate? > "
+read incr
+printf '\n' * '\n'
+for ((i=1; i<=incr; i++))
+do
+generate
+sleep $(shuf -i 1-3 -n 1)
+done
