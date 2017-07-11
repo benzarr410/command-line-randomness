@@ -2,7 +2,8 @@ Hi! I'm benzarr, and I write simple, fun bash scripts for your Linux command lin
 
 ## How do I install this thing?
 Now, to install this repo, it's quite simple.
-First, download the zip.
+
+First, download the zip, then extract it wherever.
 
 Then, open the terminal. (Ctrl+Alt+T).
 
