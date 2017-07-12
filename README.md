@@ -7,7 +7,7 @@ First, download the zip, then extract it wherever.
 
 Then, open the terminal. (Ctrl+Alt+T).
 
-`cd` to the `command-line-fun-master` directory.
+`cd` to the `command-line-randomness-master` directory.
 
 Mark the files as executable, either by right clicking, then going to Properties->Permissions->Allow this file to run as program, *or*, run this: `chmod +x ./<filename>`
 
