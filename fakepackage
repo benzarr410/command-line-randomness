@@ -1,0 +1,37 @@
+#!/bin/bash
+
+clear
+printf "PLEASE NOTE: THE NEXT HOSTNAME PROMPT IS NOT REAL. IT USES THE LOCAL HOSTNAME VARIABLE, PLEASE DO NOT SUE ME FOR HACKING.\nMake sure to pass only install or remove!"
+printf '\n' * '\n'
+printf '\n' * '\n'
+printf "$HOSTNAME@$HOSTNAME:~$ "
+read cmd
+op=${cmd:13:6}
+pkgname=(lenx sli8 nyand backpack-dev backpack-bin fpress sysrp radiodb antlr lib-slant)
+if [[ "$op" = "instal" ]]; then
+  args=${cmd:21}
+  arch=$(shuf -i 0-26 -n 1).$(shuf -i 0-9 -n 1)
+  space=$(shuf -i 0-26 -n 1).$(shuf -i 0-9 -n 1)
+  version=$(shuf -i 0-9 -n 1).$(shuf -i 0-9 -n 1).$(shuf -i 0-9 -n 1)-$(shuf -i 0-9 -n 1)
+  function triggers() {
+  printf "Processing triggers for ${pkgname[$(shuf -i 0-9 -n 1)]} (1:2.$(shuf -i 0-15 -n 1).$(shuf -i 0-26 -n 1)-0ubuntu$(shuf -i 0-8 -n 1).$(shuf -i 0-9 -n 1)) ...\n"
+}
+  
+  printf "[sudo] password for $HOSTNAME:\nReading package lists... Done\nBuilding dependency tree\nReading state information... Done\nThe following NEW packages will be installed:\n$args\n0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.\nNeed to get $arch MB of archives.\nAfter this operation, $space MB of additional disk space will be used.\nDo you want to continue? [Y/n] y\nUnpacking $args $version) ...\n" 
+  triggers 
+  triggers 
+  triggers 
+  triggers
+ printf "Setting up $args ($version) ...\n"
+ triggers
+ printf "$HOSTNAME@$HOSTNAME:~$"
+ printf '\n' * '\n'
+ printf '\n' * '\n'
+elif [[ "$op" = "remove"  ]]; then
+  args=${cmd:20}
+    space=$(shuf -i 0-26 -n 1).$(shuf -i 0-9 -n 1)
+  printf "[sudo] password for $HOSTNAME:\nReading package lists... Done\nBuilding dependency tree\nReading state information... Done\nThe following packages will be REMOVED:\n$args\n0 upgraded, 0 newly installed, 1 to remove and 0 not upgraded.\nAfter this operation, $space MB disk space will be freed.\nDo you want to continue? [Y/n] y\n(Reading database ... $(shuf -i 20000-30000 -n 1) files and directories currently installed.\nRemoving $args (1:2.$(shuf -i 0-15 -n 1).$(shuf -i 0-26 -n 1)-0ubuntu$(shuf -i 0-8 -n 1).$(shuf -i 0-9 -n 1)) ...\n$HOSTNAME@$HOSTNAME:~$"
+  printf '\n' * '\n'
+  printf '\n' * '\n'
+else ./fakepackage ^C
+fi
