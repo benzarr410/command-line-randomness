@@ -18,3 +18,5 @@ Then, double click on the file, or run `./<filename>` And boom, it should run. I
 Deathbattle: Fight someone (or something) to the death for glory! Or shame...
 
 Discord Chat Generator: [Discord](http://discordapp.com) is a multiplatform chat service for gamers, and it has some silly antics that go on in its official servers. This script emulates that.
+
+Fake Package: A script to fake install/uninstall packages, for teh lulz. **NOTE:** You *must* pass it `sudo apt-get install` or `sudo apt-get remove`, regardless of how you install packages.
